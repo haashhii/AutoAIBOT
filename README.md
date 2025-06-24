@@ -1,4 +1,4 @@
-# 🚗 Hasham Automobile Chatbot
+# 🚗 Automobile Chatbot
 
 An intelligent customer support assistant built using FastAPI, LangChain, OpenAI, and TinyDB. This chatbot helps customers inquire about vehicles, request services (like oil changes), and log their contact information—all through a natural conversation.
 
@@ -7,7 +7,7 @@ An intelligent customer support assistant built using FastAPI, LangChain, OpenAI
 ## 📁 Project Structure
 
 ```
-hasham-automobile-chatbot/
+AutoAIBOT/
 │
 ├── main.py                          # FastAPI entry point
 ├── app_context.py                   # LLM, tools, memory, agent setup
@@ -99,4 +99,4 @@ Then open your browser at [http://localhost:8000](http://localhost:8000)
 ## 📞 Contact
 
 Hashim | `https://github.com/haashhii`  
-© 2025 Hasham Automobile Solutions
+© 2025 AutoAIBOT
