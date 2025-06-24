@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="static/style.css" />
-    <title>winnowPro</title>
+    <title>Hashim</title>
   </head>
   <body>
     <header
@@ -16,17 +16,17 @@
       >
         <a class="flex title-font font-medium items-center sm:mb-4 md:mb-0">
           <div class="ml-3 text-3xl font-bold">
-            <span class="text-emerald-500">ABC</span>
-            <span>DEF</span>
+            <span class="text-emerald-500">HASH</span>
+            <span>Inc.</span>
           </div>
         </a>
         <nav
           class="hidden sm:flex md:ml-auto flex-wrap items-center text-base justify-center"
         >
-          <a class="mr-5 hover:text-gray-200 cursor-pointer">First Link</a>
-          <a class="mr-5 hover:text-gray-200 cursor-pointer">Second Link</a>
-          <a class="mr-5 hover:text-gray-200 cursor-pointer">Third Link</a>
-          <a class="mr-5 hover:text-gray-200 cursor-pointer">Fourth Link</a>
+          <a class="mr-5 hover:text-gray-200 cursor-pointer">Home</a>
+          <a class="mr-5 hover:text-gray-200 cursor-pointer">About</a>
+          <a class="mr-5 hover:text-gray-200 cursor-pointer">Services</a>
+          <a class="mr-5 hover:text-gray-200 cursor-pointer">Contact</a>
         </nav>
         <div
           class="flex gap-1 flex-col items-center sm:hidden mobile-nav-btn cursor-pointer"
@@ -38,10 +38,10 @@
       </div>
       <div class="mobile-nav">
         <div class="p-8 flex flex-col text-white w-full">
-          <a class="mr-5 hover:">First Link</a>
-          <a class="mr-5 hover:">Second Link</a>
-          <a class="mr-5 hover:">Third Link</a>
-          <a class="mr-5 hover:">Fourth Link</a>
+          <a class="mr-5 hover:">Home</a>
+          <a class="mr-5 hover:">About</a>
+          <a class="mr-5 hover:">Services</a>
+          <a class="mr-5 hover:">Contact</a>
         </div>
       </div>
     </header>
@@ -54,29 +54,29 @@
           class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center"
         >
           <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium">
-            Luxury & Prestige at Its Best
-            <br class="hidden lg:inline-block" /><span
+            Smart AI Meets Auto Expertise
+            <br class="hidden lg:inline-block" />
+            <span
               class="text-gray-400 text-sm"
-              >Experience the pinnacle of elegance with our premium car
-              selection.</span
-            >
+              >Chat with our intelligent assistant for car info or service bookings. 
+            </span>
           </h1>
           <p class="mb-8 leading-relaxed">
-            Indulge in the finest collection of luxury vehicles, combining
-            cutting-edge technology with timeless design. From city streets to
-            open highways, our cars ensure a smooth and unparalleled ride.
-            Explore the range and find the car that matches your style and
-            sophistication.
+            Discover our smart chatbot built with FastAPI to guide you through car
+            inquiries and effortless service bookings. It captures your details safely
+            and connects you to our expert team. Whether you're buying, browsing, or
+            booking, our assistant ensures speed, ease, and satisfaction every time.
           </p>
           <div class="flex justify-center">
             <button
+              onclick="toggleChat()"
               class="inline-flex text-white bg-emerald-500 border-0 py-2 px-6 focus:outline-none hover:bg-emerald-600 rounded text-lg"
             >
-              Explore Our Collection
+              Talk to Our Chatbot
             </button>
           </div>
         </div>
-        <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+        <div class="lg:max-w-lg lg:w-full md:w-1/2 w-1/2">
           <img
             class="object-cover object-center rounded-md"
             alt="hero"
@@ -86,56 +86,9 @@
       </div>
     </section>
 
-    <section class="text-gray-400 body-font">
-      <div class="container px-5 py-24 mx-auto flex flex-row-reverse flex-wrap">
-        <div
-          class="flex flex-wrap -mx-4 mt-auto mb-auto lg:w-1/2 sm:w-2/3 content-start sm:pr-10 text-right"
-        >
-          <div class="w-full sm:p-4 px-4 mb-6">
-            <h1 class="title-font font-medium text-xl mb-2 text-white">
-              Performance Meets Precision
-            </h1>
-            <div class="leading-relaxed">
-              High-performance vehicles engineered for those who demand more.
-              Discover power, speed, and control in every drive.
-            </div>
-          </div>
-          <div class="p-4 sm:w-1/2 lg:w-1/4 w-1/2">
-            <h2 class="title-font font-medium text-3xl text-white">200</h2>
-            <p class="leading-relaxed">Cars Sold</p>
-          </div>
-          <div class="p-4 sm:w-1/2 lg:w-1/4 w-1/2">
-            <h2 class="title-font font-medium text-3xl text-white">197</h2>
-            <p class="leading-relaxed">Positive Reviews</p>
-          </div>
-          <div class="p-4 sm:w-1/2 lg:w-1/4 w-1/2">
-            <h2 class="title-font font-medium text-3xl text-white">142</h2>
-            <p class="leading-relaxed">Test Drives</p>
-          </div>
-          <div class="p-4 sm:w-1/2 lg:w-1/4 w-1/2">
-            <h2 class="title-font font-medium text-3xl text-white">240</h2>
-            <p class="leading-relaxed">Models Available</p>
-          </div>
-        </div>
-        <div
-          class="lg:w-1/2 sm:w-1/3 w-full rounded-lg overflow-hidden mt-6 sm:mt-0"
-        >
-          <img
-            class="object-cover object-center w-full h-full flip-image rounded-lg"
-            src="static/car-5.png"
-            alt="stats"
-          />
-        </div>
-      </div>
-    </section>
-
-    <div class="logos-container w-full flex gap-8 justify-center items-center">
-      <img src="static/car-logos.jpeg" alt="" />
-    </div>
-
     <footer class="text-gray-400 body-font">
       <div
-        class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col"
+        class="container px-5 py-0 mx-auto flex items-center sm:flex-row flex-col"
       >
         <a
           class="flex title-font font-medium items-center md:justify-start justify-center text-white"

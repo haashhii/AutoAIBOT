@@ -1,0 +1,352 @@
+2025-06-24 03:08:18,547 - INFO - [session] New session created: df8d0385-7106-4364-a3ed-bbbf3146f69c
+2025-06-24 03:08:20,251 - INFO - [chat] Session: df8d0385-7106-4364-a3ed-bbbf3146f69c, User message: hi my name is hashhii i need oil change for my ford focus 9999998889
+2025-06-24 03:08:22,168 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-24 03:08:23,003 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-24 03:12:05,991 - INFO - [session] New session created: 11038893-bfb4-4d3d-8b87-54d99fde6e1f
+2025-06-24 03:12:07,330 - INFO - [chat] Session: 11038893-bfb4-4d3d-8b87-54d99fde6e1f, User message: hi my name is hashhii i need oil change for my ford focus 9999998889
+2025-06-24 03:12:08,610 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-24 03:12:09,285 - ERROR - [chat] Error in session 11038893-bfb4-4d3d-8b87-54d99fde6e1f: 'UserDataManagerService' object has no attribute 'save_service_data'
+Traceback (most recent call last):
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\routes\main.py", line 33, in chat_with_user
+    response = await agent_executor.ainvoke({"input": message})
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain\chains\base.py", line 215, in ainvoke
+    raise e
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain\chains\base.py", line 206, in ainvoke
+    await self._acall(inputs, run_manager=run_manager)
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain\agents\agent.py", line 1674, in _acall
+    next_step_output = await self._atake_next_step(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain\agents\agent.py", line 1468, in _atake_next_step
+    [
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain\agents\agent.py", line 1468, in <listcomp>
+    [
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain\agents\agent.py", line 1552, in _aiter_next_step
+    result = await asyncio.gather(
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain\agents\agent.py", line 1585, in _aperform_agent_action
+    observation = await tool.arun(
+                  ^^^^^^^^^^^^^^^^
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain_core\tools\base.py", line 702, in arun
+    raise error_to_raise
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain_core\tools\base.py", line 669, in arun
+    response = await asyncio.create_task(coro, context=context)  # type: ignore
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\tools_custom.py", line 88, in _arun
+    return await super()._arun(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain_core\tools\base.py", line 469, in _arun
+    return await run_in_executor(None, self._run, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain_core\runnables\config.py", line 590, in run_in_executor
+    return await asyncio.get_running_loop().run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ss172\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain_core\runnables\config.py", line 581, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\tools_custom.py", line 69, in _run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\app_context.py", line 39, in Servicedetailfunction
+    user_data_manager_service.save_service_data(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'UserDataManagerService' object has no attribute 'save_service_data'
+2025-06-24 03:12:24,879 - INFO - [session] New session created: 8f5e0773-3436-4478-a3bd-3803bdd6b3f4
+2025-06-24 03:12:26,745 - INFO - [chat] Session: 8f5e0773-3436-4478-a3bd-3803bdd6b3f4, User message: hi my name is hashhii i need oil change for my ford focus 9999998889
+2025-06-24 03:12:28,102 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-24 03:12:28,293 - ERROR - [chat] Error in session 8f5e0773-3436-4478-a3bd-3803bdd6b3f4: 'UserDataManagerService' object has no attribute 'save_service_data'
+Traceback (most recent call last):
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\routes\main.py", line 33, in chat_with_user
+    response = await agent_executor.ainvoke({"input": message})
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain\chains\base.py", line 215, in ainvoke
+    raise e
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain\chains\base.py", line 206, in ainvoke
+    await self._acall(inputs, run_manager=run_manager)
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain\agents\agent.py", line 1674, in _acall
+    next_step_output = await self._atake_next_step(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain\agents\agent.py", line 1468, in _atake_next_step
+    [
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain\agents\agent.py", line 1468, in <listcomp>
+    [
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain\agents\agent.py", line 1552, in _aiter_next_step
+    result = await asyncio.gather(
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain\agents\agent.py", line 1585, in _aperform_agent_action
+    observation = await tool.arun(
+                  ^^^^^^^^^^^^^^^^
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain_core\tools\base.py", line 702, in arun
+    raise error_to_raise
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain_core\tools\base.py", line 669, in arun
+    response = await asyncio.create_task(coro, context=context)  # type: ignore
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\tools_custom.py", line 88, in _arun
+    return await super()._arun(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain_core\tools\base.py", line 469, in _arun
+    return await run_in_executor(None, self._run, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain_core\runnables\config.py", line 590, in run_in_executor
+    return await asyncio.get_running_loop().run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ss172\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain_core\runnables\config.py", line 581, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\tools_custom.py", line 69, in _run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\app_context.py", line 39, in Servicedetailfunction
+    user_data_manager_service.save_service_data(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'UserDataManagerService' object has no attribute 'save_service_data'
+2025-06-24 03:13:05,344 - INFO - [session] New session created: 585fc6ca-a663-400b-81d5-dc0712f0897f
+2025-06-24 03:13:07,017 - INFO - [chat] Session: 585fc6ca-a663-400b-81d5-dc0712f0897f, User message: hi my name is hashhii i need oil change for my ford focus 9999998889
+2025-06-24 03:13:08,043 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-24 03:13:08,993 - ERROR - [chat] Error in session 585fc6ca-a663-400b-81d5-dc0712f0897f: 'UserDataManagerService' object has no attribute 'save_service_data'
+Traceback (most recent call last):
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\routes\main.py", line 33, in chat_with_user
+    response = await agent_executor.ainvoke({"input": message})
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain\chains\base.py", line 215, in ainvoke
+    raise e
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain\chains\base.py", line 206, in ainvoke
+    await self._acall(inputs, run_manager=run_manager)
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain\agents\agent.py", line 1674, in _acall
+    next_step_output = await self._atake_next_step(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain\agents\agent.py", line 1468, in _atake_next_step
+    [
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain\agents\agent.py", line 1468, in <listcomp>
+    [
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain\agents\agent.py", line 1552, in _aiter_next_step
+    result = await asyncio.gather(
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain\agents\agent.py", line 1585, in _aperform_agent_action
+    observation = await tool.arun(
+                  ^^^^^^^^^^^^^^^^
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain_core\tools\base.py", line 702, in arun
+    raise error_to_raise
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain_core\tools\base.py", line 669, in arun
+    response = await asyncio.create_task(coro, context=context)  # type: ignore
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\tools_custom.py", line 88, in _arun
+    return await super()._arun(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain_core\tools\base.py", line 469, in _arun
+    return await run_in_executor(None, self._run, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain_core\runnables\config.py", line 590, in run_in_executor
+    return await asyncio.get_running_loop().run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ss172\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain_core\runnables\config.py", line 581, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\tools_custom.py", line 69, in _run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\app_context.py", line 39, in Servicedetailfunction
+    user_data_manager_service.save_service_data(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'UserDataManagerService' object has no attribute 'save_service_data'
+2025-06-24 03:13:17,982 - INFO - [session] New session created: 72196e33-ab51-44e2-a465-85cfeff960fd
+2025-06-24 03:13:19,734 - INFO - [chat] Session: 72196e33-ab51-44e2-a465-85cfeff960fd, User message: hi
+2025-06-24 03:13:20,868 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-24 03:13:27,969 - INFO - [chat] Session: 72196e33-ab51-44e2-a465-85cfeff960fd, User message: hi my name is hashhii i need oil change for my ford focus 9999998889
+2025-06-24 03:13:28,962 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-24 03:13:29,835 - ERROR - [chat] Error in session 72196e33-ab51-44e2-a465-85cfeff960fd: 'UserDataManagerService' object has no attribute 'save_service_data'
+Traceback (most recent call last):
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\routes\main.py", line 33, in chat_with_user
+    response = await agent_executor.ainvoke({"input": message})
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain\chains\base.py", line 215, in ainvoke
+    raise e
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain\chains\base.py", line 206, in ainvoke
+    await self._acall(inputs, run_manager=run_manager)
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain\agents\agent.py", line 1674, in _acall
+    next_step_output = await self._atake_next_step(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain\agents\agent.py", line 1468, in _atake_next_step
+    [
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain\agents\agent.py", line 1468, in <listcomp>
+    [
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain\agents\agent.py", line 1552, in _aiter_next_step
+    result = await asyncio.gather(
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain\agents\agent.py", line 1585, in _aperform_agent_action
+    observation = await tool.arun(
+                  ^^^^^^^^^^^^^^^^
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain_core\tools\base.py", line 702, in arun
+    raise error_to_raise
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain_core\tools\base.py", line 669, in arun
+    response = await asyncio.create_task(coro, context=context)  # type: ignore
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\tools_custom.py", line 88, in _arun
+    return await super()._arun(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain_core\tools\base.py", line 469, in _arun
+    return await run_in_executor(None, self._run, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain_core\runnables\config.py", line 590, in run_in_executor
+    return await asyncio.get_running_loop().run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ss172\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain_core\runnables\config.py", line 581, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\tools_custom.py", line 69, in _run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\app_context.py", line 39, in Servicedetailfunction
+    user_data_manager_service.save_service_data(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'UserDataManagerService' object has no attribute 'save_service_data'
+2025-06-24 03:15:19,703 - INFO - [session] New session created: 0ebc4b8b-d472-4bb8-a11e-bf471b04395c
+2025-06-24 03:15:21,478 - INFO - [chat] Session: 0ebc4b8b-d472-4bb8-a11e-bf471b04395c, User message: hi my name is hashhii i need oil change for my ford focus 9999998889
+2025-06-24 03:15:22,573 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-24 03:15:23,318 - ERROR - [chat] Error in session 0ebc4b8b-d472-4bb8-a11e-bf471b04395c: 'UserDataManagerService' object has no attribute 'save_service_data'
+Traceback (most recent call last):
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\routes\main.py", line 33, in chat_with_user
+    response = await agent_executor.ainvoke({"input": message})
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain\chains\base.py", line 215, in ainvoke
+    raise e
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain\chains\base.py", line 206, in ainvoke
+    await self._acall(inputs, run_manager=run_manager)
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain\agents\agent.py", line 1674, in _acall
+    next_step_output = await self._atake_next_step(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain\agents\agent.py", line 1468, in _atake_next_step
+    [
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain\agents\agent.py", line 1468, in <listcomp>
+    [
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain\agents\agent.py", line 1552, in _aiter_next_step
+    result = await asyncio.gather(
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain\agents\agent.py", line 1585, in _aperform_agent_action
+    observation = await tool.arun(
+                  ^^^^^^^^^^^^^^^^
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain_core\tools\base.py", line 702, in arun
+    raise error_to_raise
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain_core\tools\base.py", line 669, in arun
+    response = await asyncio.create_task(coro, context=context)  # type: ignore
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\tools_custom.py", line 88, in _arun
+    return await super()._arun(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain_core\tools\base.py", line 469, in _arun
+    return await run_in_executor(None, self._run, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain_core\runnables\config.py", line 590, in run_in_executor
+    return await asyncio.get_running_loop().run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ss172\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain_core\runnables\config.py", line 581, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\tools_custom.py", line 69, in _run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\app_context.py", line 39, in Servicedetailfunction
+    user_data_manager_service.save_service_data(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'UserDataManagerService' object has no attribute 'save_service_data'
+2025-06-24 03:15:50,778 - INFO - [session] New session created: ef3f7f67-af04-4f7d-a0a1-305c272014e8
+2025-06-24 03:15:56,156 - INFO - [chat] Session: ef3f7f67-af04-4f7d-a0a1-305c272014e8, User message: hi i need oil change
+2025-06-24 03:15:57,097 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-24 03:16:08,690 - INFO - [chat] Session: ef3f7f67-af04-4f7d-a0a1-305c272014e8, User message: hashhii 9633668400
+2025-06-24 03:16:09,299 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-24 03:16:16,327 - INFO - [chat] Session: ef3f7f67-af04-4f7d-a0a1-305c272014e8, User message: hashhiimm
+2025-06-24 03:16:18,051 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-24 03:16:18,361 - ERROR - [chat] Error in session ef3f7f67-af04-4f7d-a0a1-305c272014e8: 'UserDataManagerService' object has no attribute 'save_service_data'
+Traceback (most recent call last):
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\routes\main.py", line 33, in chat_with_user
+    response = await agent_executor.ainvoke({"input": message})
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain\chains\base.py", line 215, in ainvoke
+    raise e
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain\chains\base.py", line 206, in ainvoke
+    await self._acall(inputs, run_manager=run_manager)
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain\agents\agent.py", line 1674, in _acall
+    next_step_output = await self._atake_next_step(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain\agents\agent.py", line 1468, in _atake_next_step
+    [
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain\agents\agent.py", line 1468, in <listcomp>
+    [
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain\agents\agent.py", line 1552, in _aiter_next_step
+    result = await asyncio.gather(
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain\agents\agent.py", line 1585, in _aperform_agent_action
+    observation = await tool.arun(
+                  ^^^^^^^^^^^^^^^^
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain_core\tools\base.py", line 702, in arun
+    raise error_to_raise
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain_core\tools\base.py", line 669, in arun
+    response = await asyncio.create_task(coro, context=context)  # type: ignore
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\tools_custom.py", line 88, in _arun
+    return await super()._arun(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain_core\tools\base.py", line 469, in _arun
+    return await run_in_executor(None, self._run, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain_core\runnables\config.py", line 590, in run_in_executor
+    return await asyncio.get_running_loop().run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ss172\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\AutoAIBOT\Lib\site-packages\langchain_core\runnables\config.py", line 581, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\tools_custom.py", line 69, in _run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ss172\OneDrive\Desktop\hasham automobile chatbot\hasham automobile chatbot\app_context.py", line 39, in Servicedetailfunction
+    user_data_manager_service.save_service_data(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'UserDataManagerService' object has no attribute 'save_service_data'
+2025-06-24 03:19:03,643 - INFO - [session] New session created: 29283901-4e38-4138-9a8c-a8958aff6120
+2025-06-24 03:19:13,501 - INFO - [chat] Session: 29283901-4e38-4138-9a8c-a8958aff6120, User message: hi i need oil change
+2025-06-24 03:19:14,718 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-24 03:19:23,400 - INFO - [chat] Session: 29283901-4e38-4138-9a8c-a8958aff6120, User message: my name is hashim 9633668400
+2025-06-24 03:19:24,443 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-24 03:19:24,937 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-24 03:25:18,333 - INFO - [session] New session created: 65b3295e-82ab-45d5-84d4-257e5fb8bb49
+2025-06-24 03:25:30,814 - INFO - [chat] Session: 65b3295e-82ab-45d5-84d4-257e5fb8bb49, User message: hi i need oil change for my ford focus
+2025-06-24 03:25:32,036 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-24 03:25:44,476 - INFO - [chat] Session: 65b3295e-82ab-45d5-84d4-257e5fb8bb49, User message: my name is hashim 9633668400
+2025-06-24 03:25:45,560 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-24 03:25:46,201 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-24 03:33:52,772 - INFO - [session] New session created: 8eea6cdd-278a-4b34-b64c-1ec56fbd829a
+2025-06-24 03:34:02,780 - INFO - [chat] Session: 8eea6cdd-278a-4b34-b64c-1ec56fbd829a, User message: hi i need honda civic
+2025-06-24 03:34:03,809 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-24 03:34:18,055 - INFO - [chat] Session: 8eea6cdd-278a-4b34-b64c-1ec56fbd829a, User message: hash test 9633668401
+2025-06-24 03:34:19,161 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-24 03:34:20,125 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-24 03:53:51,075 - INFO - [session] New session created: e7572870-3a69-4d3a-a358-ca2f3916de5e
+2025-06-24 03:53:55,617 - INFO - [chat] Session: e7572870-3a69-4d3a-a358-ca2f3916de5e, User message: hi
+2025-06-24 03:53:56,572 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-24 03:56:35,713 - INFO - [session] New session created: cd0512d1-591e-427b-9ec9-66b008e6704d
+2025-06-24 04:03:13,548 - INFO - [session] New session created: f91ac108-f811-46fa-8bc0-77b77d682648
+2025-06-24 04:03:15,628 - INFO - [chat] Session: f91ac108-f811-46fa-8bc0-77b77d682648, User message: hi
+2025-06-24 04:03:16,634 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-24 04:04:20,835 - INFO - [session] New session created: 9e04b924-adb1-423d-ad87-8840b3cb1ba3
+2025-06-24 04:04:24,001 - INFO - [chat] Session: 9e04b924-adb1-423d-ad87-8840b3cb1ba3, User message: hi
+2025-06-24 04:04:24,629 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-24 04:05:03,370 - INFO - [session] New session created: 102850d1-b587-472b-8f9e-db9ec5907f82
+2025-06-24 04:11:03,191 - INFO - [session] New session created: 5a258466-c804-43c9-9907-b3c39213f096
