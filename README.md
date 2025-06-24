@@ -36,8 +36,7 @@ hasham-automobile-chatbot/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/hasham-automobile-chatbot.git
-cd hasham-automobile-chatbot
+git clone https://github.com/haashhii/AutoAIBOT.git
 ```
 
 ### 2. Set up environment variables
