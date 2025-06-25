@@ -1,82 +1,115 @@
-let sessionId = null;
+/**
+ * Chatbot UI Script
+ * Author: Hashim
+ * Description: Handles chat window toggle, session management, message sending, 
+ * FastAPI backend integration, typing animation, and mobile navigation toggling.
+ */
 
+// ======================
+// Global Variables
+// ======================
+
+let sessionId = null;  // Session ID assigned by FastAPI backend
+
+// Loader animation HTML shown while waiting for bot response
 const loaderHtml = `
-<div id="container">
-  <div id="ball-1" class="circle"></div>
-  <div id="ball-2" class="circle"></div>
-  <div id="ball-3" class="circle"></div>
-<div>`;
+  <div id="container">
+    <div id="ball-1" class="circle"></div>
+    <div id="ball-2" class="circle"></div>
+    <div id="ball-3" class="circle"></div>
+  </div>
+`;
 
-// Get the current domain from the browser
+// Dynamic backend URL based on current domain (localhost or production)
 const domain = window.location.origin;
 
-// Function to toggle chat window visibility
+// ======================
+// Chat Window Logic
+// ======================
+
+/**
+ * Toggles chat window visibility and triggers session fetch if first open.
+ */
 function toggleChat() {
   const chatWindow = document.getElementById("chatWindow");
   chatWindow.classList.toggle("flex");
   chatWindow.classList.toggle("hidden");
 
-  // Fetch a new session ID if the chat is opened for the first time
   if (!sessionId) {
     fetchNewSession();
   }
 }
 
-// Function to fetch a new session ID from FastAPI backend
+/**
+ * Fetches a new session ID from FastAPI backend.
+ * Called once when chat opens for the first time.
+ */
 async function fetchNewSession() {
-  const response = await fetch(
-    `${domain}/session`  // Use the dynamic domain
-  );
-  const data = await response.json();
-  sessionId = data.session_id;
-  console.log("Session ID:", sessionId);
-  console.log("Data", data);
+  try {
+    const response = await fetch(`${domain}/session`);
+    const data = await response.json();
+    sessionId = data.session_id;
+    console.log("Session ID:", sessionId);
+  } catch (error) {
+    console.error("Error fetching session ID:", error);
+  }
 }
 
-// Function to handle message send event
+// ======================
+// Message Handling
+// ======================
+
+/**
+ * Sends user message and handles bot response from backend.
+ */
 async function handleSend() {
   const chatInput = document.getElementById("chatInput");
   const userMessage = chatInput.value.trim();
 
-  if (userMessage) {
-    addMessageToChat(userMessage, "user");
-    chatInput.value = "";
+  if (!userMessage) return;
 
-    const loadingMessageElement = addMessageToChat("...", "bot", true);
+  addMessageToChat(userMessage, "user");
+  chatInput.value = "";
 
-    // Send user message to FastAPI backend and get the bot response
+  const loadingMessageElement = addMessageToChat("...", "bot", true);
+
+  try {
     const botResponse = await sendMessageToBot(userMessage);
-
     loadingMessageElement.remove();
-
-    // Display bot response
     addMessageToChat(botResponse.response, "bot");
+  } catch (error) {
+    loadingMessageElement.remove();
+    addMessageToChat("Sorry, there was an error connecting to the server.", "bot");
+    console.error("Bot response error:", error);
   }
 }
 
-// Function to send user message to FastAPI backend
+/**
+ * Sends the message to the FastAPI backend with session ID.
+ * @param {string} userMessage - Message entered by user
+ * @returns {Object} response - Response JSON with chatbot reply
+ */
 async function sendMessageToBot(userMessage) {
   if (!sessionId) {
-    console.error("Session ID is missing");
-    return { response: "Error: No session ID found." };
+    throw new Error("Session ID is missing");
   }
 
-  const response = await fetch(
-    `${domain}/chat/${sessionId}`,  // Use the dynamic domain
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ message: userMessage }),
-    }
-  );
-  
-  let res = await response.json();
-  return res;
+  const response = await fetch(`${domain}/chat/${sessionId}`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ message: userMessage }),
+  });
+
+  return await response.json();
 }
 
-// Function to add message to chat window
+/**
+ * Adds a chat message to the chat window.
+ * @param {string} message - Text content of the message
+ * @param {string} sender - 'user' or 'bot'
+ * @param {boolean} isLoading - If true, shows loader instead of text
+ * @returns {HTMLElement} - Reference to the message DOM element
+ */
 function addMessageToChat(message, sender, isLoading = false) {
   const chatBody = document.getElementById("chatBody");
   const messageElement = document.createElement("div");
@@ -87,7 +120,7 @@ function addMessageToChat(message, sender, isLoading = false) {
     messageElement.innerHTML = loaderHtml;
   } else {
     if (sender === "bot") {
-      typeText(message, messageElement, 2, 50);
+      typeText(message, messageElement);
     } else {
       messageElement.textContent = message;
     }
@@ -95,13 +128,17 @@ function addMessageToChat(message, sender, isLoading = false) {
 
   chatBody.appendChild(messageElement);
   chatBody.scrollTop = chatBody.scrollHeight;
-
   return messageElement;
 }
 
-function typeText(text, element, charactersPerStep = 1, speed = 50) {
-  console.log(text);
-
+/**
+ * Animates bot text output by typing it letter by letter.
+ * @param {string} text - The bot's reply text
+ * @param {HTMLElement} element - The DOM element to write into
+ * @param {number} charactersPerStep - Number of characters per tick
+ * @param {number} speed - Delay between characters (ms)
+ */
+function typeText(text, element, charactersPerStep = 2, speed = 50) {
   let index = 0;
 
   function type() {
@@ -115,18 +152,25 @@ function typeText(text, element, charactersPerStep = 1, speed = 50) {
   type();
 }
 
-// Add event listener to handle 'Enter' key press
-document
-  .getElementById("chatInput")
-  .addEventListener("keypress", function (event) {
-    if (event.key === "Enter") {
-      handleSend();
-    }
-  });
+// ======================
+// Event Listeners
+// ======================
 
+/**
+ * Sends message on Enter key press.
+ */
+document.getElementById("chatInput").addEventListener("keypress", function (event) {
+  if (event.key === "Enter") {
+    handleSend();
+  }
+});
+
+/**
+ * Toggles mobile navigation menu visibility.
+ */
 const mobileNavBtn = document.querySelector(".mobile-nav-btn");
 const mobileNav = document.querySelector(".mobile-nav");
 
-mobileNavBtn.addEventListener("click", () => {
+mobileNavBtn?.addEventListener("click", () => {
   mobileNav.classList.toggle("active");
 });

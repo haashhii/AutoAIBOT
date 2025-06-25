@@ -1,176 +1,248 @@
+/* 
+  ============================
+  Base Global Styles
+  ============================
+*/
+
+/* Root Styling */
 body {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
   background-color: #000;
   color: white;
 }
 
+/* Flip image horizontally (used for chat avatars if needed) */
+.flip-image {
+  transform: scaleX(-1);
+}
+
+/* Used to visually separate header from content */
+header {
+  border-bottom: 1px solid white;
+}
+
+/* ============================
+   Floating Chat Button Styles
+   ============================ */
 .chat-button {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  color: white;
-  border: none;
-  border-radius: 50%;
   width: 60px;
   height: 60px;
+  background-color: #10b981; /* Tailwind emerald-500 */
+  color: white;
   font-size: 24px;
+  border: none;
+  border-radius: 50%;
   cursor: pointer;
+  display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, background-color 0.2s ease;
 }
+
 .chat-button:hover {
+  background-color: #059669; /* Tailwind emerald-600 */
+  transform: scale(1.05);
 }
+
+/* ============================
+   Chat Window Styles
+   ============================ */
 .chat-window {
   position: fixed;
   bottom: 90px;
   right: 20px;
   width: 400px;
   height: 500px;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 100%;
+  background-color: #fff;
+  color: #111827;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  max-width: 100%;
-}
-.chat-header {
-  padding: 10px;
-  text-align: center;
-  font-weight: bold;
-}
-.chat-body {
-  flex: 1;
-  padding: 10px;
-  overflow-y: auto;
-  font-size: 14px;
-}
-.message {
-  margin: 10px 0;
-  padding: 8px 12px;
-  border-radius: 8px;
-  max-width: fit-content;
-  color: black;
-}
-.user-message {
-  background-color: #d1f7c4;
-  align-self: flex-end;
-  text-align: right;
-  margin-left: auto;
-  border: 1px solid rgb(16 185 129);
-  border-radius: 12px;
-  background: rgb(198, 243, 228);
-}
-.bot-message {
-  background-color: #f0f0f0;
-  align-self: flex-start;
-  text-align: left;
-  margin-right: auto;
-}
-.chat-footer {
-  display: flex;
-  border-top: 1px solid #ccc;
-  justify-content: space-between;
-}
-.chat-input {
-  border: none;
-  padding: 10px;
-  width: calc(100% - 60px);
-  box-sizing: border-box;
-  color: black;
-}
-.send-button {
-  color: white;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-}
-.send-button:hover {
-  opacity: 0.75;
-}
-.partnerheading {
+  z-index: 1000;
 }
 
-.flip-image {
-  transform: scaleX(-1);
+/* Header Bar */
+.chat-header {
+  padding: 12px;
+  background-color: #10b981;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1rem;
 }
+
+/* Scrollable chat message area */
+.chat-body {
+  flex: 1;
+  padding: 12px;
+  overflow-y: auto;
+  font-size: 14px;
+  background-color: #f9fafb;
+}
+
+/* Footer with input and button */
+.chat-footer {
+  display: flex;
+  padding: 8px;
+  border-top: 1px solid #e5e7eb;
+  background-color: white;
+}
+
+/* Text input field */
+.chat-input {
+  flex-grow: 1;
+  padding: 10px;
+  font-size: 0.9rem;
+  border: 1px solid #ccc;
+  border-radius: 8px 0 0 8px;
+  outline: none;
+  color: #111;
+  background-color: white;
+}
+
+/* Send button */
+.send-button {
+  padding: 0 16px;
+  font-size: 1rem;
+  color: white;
+  background-color: #10b981;
+  border: none;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.send-button:hover {
+  background-color: #059669;
+  opacity: 0.95;
+}
+
+/* ============================
+   Chat Message Bubbles
+   ============================ */
+
+.message {
+  margin: 8px 0;
+  padding: 8px 12px;
+  border-radius: 12px;
+  max-width: 80%;
+  word-wrap: break-word;
+  font-size: 0.88rem;
+}
+
+.user-message {
+  background-color: rgb(198, 243, 228);
+  color: #065f46;
+  align-self: flex-end;
+  margin-left: auto;
+  border: 1px solid rgb(16 185 129);
+  border-radius: 16px 16px 0 16px;
+  text-align: right;
+}
+
+.bot-message {
+  background-color: #f3f4f6;
+  color: #111827;
+  align-self: flex-start;
+  margin-right: auto;
+  border-radius: 16px 16px 16px 0;
+  text-align: left;
+}
+
+/* ============================
+   Loading Dots Animation
+   ============================ */
+
+.loading #container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 24px;
+  gap: 6px;
+}
+
+.circle {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #10b981;
+  animation: bounce 0.6s infinite alternate;
+}
+
+#ball-2 {
+  animation-delay: 0.2s;
+}
+
+#ball-3 {
+  animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-8px);
+  }
+}
+
+/* ============================
+   Mobile Responsive Layout
+   ============================ */
+
+@media screen and (max-width: 400px) {
+  .chat-window {
+    left: 0;
+    right: 0;
+    bottom: 80px;
+    width: 100%;
+    height: 90vh;
+    border-radius: 0;
+  }
+
+  .chat-button {
+    right: 16px;
+    bottom: 16px;
+  }
+}
+
+/* ============================
+   Mobile Navigation Styles
+   ============================ */
 
 .mobile-nav {
   position: fixed;
   top: 76px;
   left: 0;
   right: 0;
-  max-width: 0;
-  overflow: hidden;
-  z-index: 90;
   width: 100%;
-  transition: 75ms;
-  background: black;
+  max-height: 0;
+  overflow: hidden;
+  background-color: black;
   border-top: 1px solid white;
+  transition: max-height 0.3s ease;
+  z-index: 90;
 }
 
 .mobile-nav.active {
-  max-width: 400px;
-  height: calc(100vh - 76px);
+  max-height: 100vh;
 }
 
 .mobile-nav a {
-  padding: 16px 0;
+  display: block;
+  padding: 16px;
   font-size: 20px;
+  color: white;
+  text-align: center;
 }
 
-header {
-  border-bottom: 1px solid white;
-}
 
-.circle {
-  display: inline-block;
-  background-color: orange;
-  height: 8px;
-  width: 8px;
-  border-radius: 25px;
-}
-
-#ball-1 {
-  -webkit-animation-name: bounce;
-  -webkit-animation-delay: 1s;
-  -webkit-animation-duration: 1.2s;
-  -webkit-animation-iteration-count: infinite;
-}
-#ball-2 {
-  -webkit-animation-name: bounce;
-  -webkit-animation-delay: 1.1s;
-  -webkit-animation-duration: 1.2s;
-  -webkit-animation-iteration-count: infinite;
-}
-#ball-3 {
-  -webkit-animation-name: bounce;
-  -webkit-animation-delay: 1.2s;
-  -webkit-animation-duration: 1.2s;
-  -webkit-animation-iteration-count: infinite;
-}
-
-@-webkit-keyframes bounce {
-  0% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(4px);
-  }
-  60% {
-    transform: translateY(-6px);
-  }
-  80% {
-    transform: translateY(0);
-  }
-}
-
-@media screen and (max-width: 400px) {
-  .chat-window {
-    left: 0;
-    right: 0;
-  }
-}
